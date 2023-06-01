@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Show Product</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+        .product {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: orange;
+            animation: fade-in 1s ease-in-out;
+        }
+        
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Show Product</h1>
+    <div id="product-list">
+        {% for product in data %}
+        <div class="product">
+            <p><strong>Product ID:</strong> {{ product['product_id'] }}</p>
+            <p><strong>Product Name:</strong> {{ product['product_name'] }}</p>
+            <p><strong>Product Stock:</strong> {{ product['product_stock'] }}</p>
+            <p><strong>Product Price:</strong> {{ product['product_price'] }}</p>
+            <p><strong>Product Supplier ID:</strong> {{ product['product_supplierid'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
